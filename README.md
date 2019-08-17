@@ -17,10 +17,10 @@
     * Set
     * Sorted Set
     
-  * **[Module3: Creating a Real App With Redis]
+  * **[Module3: Creating a Real App With Redis]**
     * Designing a Redis Database for an application
     
-  * **[Module4: Implementing Redis on Azure]
+  * **[Module4: Implementing Redis on Azure]**
   
     
 
