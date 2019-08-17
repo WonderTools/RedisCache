@@ -42,6 +42,11 @@ There are two main processes in Redis architecture:
  
  ![Image of Redis Architecture](images/redis-client-server.jpg)
  
+Redis client and server can be in the same computer or in two different computers.
+
+Redis server is responsible for storing data in memory. It handles all kinds of management and forms the major part of architecture. Redis client can be Redis console client or any other programming language’s Redis API.
+
+As we saw that Redis stores everything in primary memory. Primary memory is volatile and therefore we will loose all stored data once we restart our Redis server or computer. Therefore we need a way for datastore persistance
 
 
 ## Redis vs RDBMS
