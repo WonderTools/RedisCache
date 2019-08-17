@@ -40,7 +40,7 @@ There are two main processes in Redis architecture:
 
  These client and server can be on same computer or two different computers.
  
- ![Image of Redis Architecture](/what-is-redis.png)
+ ![Image of Redis Architecture](images/redis-client-server.jpg)
  
 
 
