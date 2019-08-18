@@ -29,25 +29,26 @@ There is an extra cost to keep and maintain cache.
 There are certain ways how we can add data in our cache database depends on our requirements, I have mentioned few most common data adding strategies.
 Lazy loading:
 Lazy Loading Cache is adding data to cache, only when it is first used. There are two ways of doing this:
-1. Cache aside
+**Cache aside**
 - The application first checks the cache. If data is found in cache, it is returned to client, but if the data is not found in cache, Client queries the database, returns response to client where client stores the data in cache as well. This is the most frequently used strategy in Read heavy applications.
 ![cache-aside](images/cache-aside.png)
 
 Here the application does not rely completely on cache, so even if cache is down, application can get data from database. However, if the data is modified in database, cache won’t come to know, and client will get stale data. To tackle this problem, data is stored with some TTL in cache
 
-2. Read through caching:
+**Read through caching:**
 - Read through and Cache-aside are quite the same way of fetching and saving data. The difference is Read-through cache sits in-line with the database, so when we don’t find data in cache, cache layer sends queries, fetches data, stores it in cache and sends it to client. Data model of read-though has to be same as the original database.
 ![read-through](images/read-through.png)
 
-* Write through caching:
+**Write through caching:**
 As the name suggests, in this strategy we save data in cache as the time of writing. Here cache is inline with database and every time when clients want to save new data, it first stores it in cache and then to database.
 ![write-through](images/write-through.png)
 
 Storing at two places increase the latency at the time of write but data is consistent at every read.
 
-* Write back caching:
+**Write back caching:**
 In write back caching, client stores everything just in cache without storing it to the database. Cache after some delay stores new data in database. This is ideal for write heavy applications, since data is quickly written in cache and cache can send batched queries to database decreasing the load.
 ![write-back](images/write-back.png)
+
 But major drawback here is if cache goes down before data is written on database, that data will be lost permanently.
 
 ### Cache eviction strategies:
