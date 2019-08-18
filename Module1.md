@@ -29,6 +29,7 @@ There is an extra cost to keep and maintain cache.
 There are certain ways how we can add data in our cache database depends on our requirements, I have mentioned few most common data adding strategies.
 Lazy loading:
 Lazy Loading Cache is adding data to cache, only when it is first used. There are two ways of doing this:
+
 **Cache aside**
 - The application first checks the cache. If data is found in cache, it is returned to client, but if the data is not found in cache, Client queries the database, returns response to client where client stores the data in cache as well. This is the most frequently used strategy in Read heavy applications.
 ![cache-aside](images/cache-aside.png)
