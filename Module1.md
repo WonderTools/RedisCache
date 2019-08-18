@@ -70,7 +70,7 @@ An eviction policy enables a cache to ensure that the size of the cache doesn’
 * couchbase
 
 
-## What is Redis ?
+## What is [Redis](https://www.youtube.com/watch?v=OG610oe_kxs) ?
 Redis is a flexible, open-source (BSD licensed), in-memory data structure store, used as database, cache, and message broker. Redis is a NoSQL database so it facilitates users to store huge amount of data without the limit of a Relational database.
 
 Redis supports various types of data structures like strings, hashes, lists, sets, sorted sets, bitmaps, hyperloglogs and geospatial indexes with radius queries.
@@ -134,9 +134,6 @@ Redis is used only to store those small textual information which needs to be ac
 
 ## Use Case of Redis
 ![use cases](images/use_cases.PNG)
-
-## Redis as a Cache
-![cache type](images/cache_types.PNG)
 
 ## Designing Cache in Redis
 * Identify the data that is repeatedly read by the application.
