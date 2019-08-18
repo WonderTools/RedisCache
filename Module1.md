@@ -1,16 +1,17 @@
-## Cache in Application
+## Cache layer in Application
 
 Imagine you are building a video streaming platform such as Youtube. Let us consider two basic features that the app will have:
-* Uploading video -
-Whenever someone uploads a video, the video will be stored in a database.
-* View video -
-multiple people should be able to search and watch uploaded videos.
-Every time a person searches for a video title, application will fetch that video from database and will send it to the user. But if there are thousands of users requesting for the same video, your application will make similar calls to database and which will do same processing and return same result. The response will be slow, they will take a lot of bandwidth and database will do same heavy complex database queries (Such as JOINT queries) to search for the same video again and again while delaying the other concurrent requests to our web servers and databases.
 
-What is caching and how it can solve our problem?
+* **Uploading video -**
+  Whenever someone uploads a video, the video will be stored in a database.
+* **View video -**
+  multiple people should be able to search and watch uploaded videos.
+  Every time a person searches for a video title, application will fetch that video from database and will send it to the user. But if there are thousands of users requesting for the same video, your application will make similar calls to database and which will do same processing and return same result. The response will be slow, they will take a lot of bandwidth and database will do same heavy complex database queries (Such as JOINT queries) to search for the same video again and again while delaying the other concurrent requests to our web servers and databases.
+
+### What is caching and how it can solve our problem?
 This is where Caching can help us. Caching is the process of saving intermediate or calculated values in memory temporarily. This speeds up the response because the previously saved computed values will simply be pulled from the cache memory every time there is a request for same search. Hence when a user searches for the video title which has already been cached, the response will be fast and the actual database will be free for executing other queries.
 
-What are the advantages of Caching?
+### What are the advantages of Caching?
 Faster response:
 Since the cache is in-memory datastore, the results are sometimes 1000x faster than the results which we get from disk. Also it saves an entire network round trip to databases and complex queries
 Avoid database being bottleneck:
@@ -18,13 +19,13 @@ Since data is fetched from cache database, network connected to database is not 
 Availability of data during network interruptions:
 When there are network fluctuations between application and database, user can still view videos which are stored in cache database.
 
-Are there any disadvantages?
+### Are there any disadvantages?
 Data inconsistency:
 The major disadvantage of caching is that a client might be looking at stale data, which can happen because of a lack of proper updating. If there is any changes in data on database, they won’t reflect in cache until they are re-cached or updated.
 Additional cost:
 There is an extra cost to keep and maintain cache.
 
-Cache Data adding strategies:
+### Cache Data adding strategies:
 There are certain ways how we can add data in our cache database depends on our requirements, I have mentioned few most common data adding strategies.
 Lazy loading:
 Lazy Loading Cache is adding data to cache, only when it is first used. There are two ways of doing this:
