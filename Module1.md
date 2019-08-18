@@ -20,9 +20,10 @@ Since data is fetched from cache database, network connected to database is not 
 When there are network fluctuations between application and database, user can still view videos which are stored in cache database.
 
 ### Are there any disadvantages?
-Data inconsistency:
+* Data inconsistency:
 The major disadvantage of caching is that a client might be looking at stale data, which can happen because of a lack of proper updating. If there is any changes in data on database, they won’t reflect in cache until they are re-cached or updated.
-Additional cost:
+
+* Additional cost:
 There is an extra cost to keep and maintain cache.
 
 ### Cache Data adding strategies:
