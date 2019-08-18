@@ -50,6 +50,24 @@ Write back caching:
 ![write-back](images/write-back.png)
 But major drawback here is if cache goes down before data is written on database, that data will be lost permanently.
 
+### Cache eviction strategies:
+An eviction policy enables a cache to ensure that the size of the cache doesn’t exceed the maximum limit. To achieve this, existing elements are removed from a cache depending on the eviction policy, but it can be customised as per application requirements. There are multiple ways through which data can be evicted from the cache.
+* Time based eviction:
+- Time based eviction strategy removes data on the basis of Time-To-Live (TTL). It can have any TTL, be it an hour or a year, though if TTL is less, data will be evicted quickly which will lead to frequent database calls to fill up cache again with that data if it is required.
+* First in, first out (FIFO):
+- First in, first out means that when you attempt to insert a new value into the cache, you remove the earliest inserted value to make space for the new one. Of course you do not remove any values before the cache meets its space limit.
+* First in, last out (FILO):
+- First in, last out is the reverse of the FIFO method. This method is useful if the first stored values are also the ones that are typically accessed the most.
+* Least recently used (LRU):
+
+One of the most used strategies is LRU. In most caching use cases, applications access the same data again and again. Say in any Google search engine, when you search for something, you will get the same results again & again at least for some time window. When you search for flights or bus or train, you get the same routes unless & until some route gets deactivated or fully reserved. In such use cases, the cached data that is not used very recently or sort of cold data can be safely evicted.
+
+### Some cache data stores:
+* Memcache
+* Redis
+* Aerospike
+* couchbase
+
 
 ## What is Redis ?
 Redis is a flexible, open-source (BSD licensed), in-memory data structure store, used as database, cache, and message broker. Redis is a NoSQL database so it facilitates users to store huge amount of data without the limit of a Relational database.
