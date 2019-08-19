@@ -5,10 +5,13 @@
  
  ## Course Overview
   * **[Module1: Introduction To Redis](https://github.com/WonderTools/RedisCache/blob/master/Module1.md)**
-    * What is redis
-    * Getting Redis installed
-    * Redis Configuration
-    * Redis Pub/Sub
+    -	Challenges without Cache
+    -	Cache Layer in Application
+    -	Introduction to Redis
+    -	Designing Cache in Redis
+    -	Redis Installation & Configuration
+    -	Redis Pub/Sub
+
     
   * **[Module2: Data Types & commands in Redis](https://github.com/krishnagupta/Redis/blob/master/Module2:%20Redis%20Basics.md)**
     * String
