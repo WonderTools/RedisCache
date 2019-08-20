@@ -279,6 +279,41 @@ redis 127.0.0.1:6379> PUBLISH redisChat "I love Redis"
 3) "I love Redis"
 ```
 
+### Redis Client Libraries
+
+Many client libraries can be found for different types of languages in this Redis page. However make sure to use recommended solution to prevent from any complications.
+
+For .NET one of the recommended client is ServiceStack.Redis. Let’s test it using .NET Core console application. (Get started with .NET Core here…)
+
+```
+dotnet new console
+dotnet add package ServiceStack.Redis.Core
+dotnet restore
+dotnet run
+```
+
+```
+using System;
+using ServiceStack.Redis;
+
+namespace redis_demo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var manager = new RedisManagerPool("localhost:6379");
+            using (var client = manager.GetClient())
+            {
+                client.Set("name", "Anmol");
+                Console.WriteLine("name={0}", client.Get<string>("name"));
+                Console.ReadLine();
+            }
+        }
+    }
+}
+```
+
 ## Implementing Pub/Sub
 
 ### Publisher
