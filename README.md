@@ -13,7 +13,7 @@
     -	Redis Pub/Sub
 
     
-  * **[Module2: Data Types & commands in Redis](https://github.com/krishnagupta/Redis/blob/master/Module2:%20Redis%20Basics.md)**
+  * **[Module2: Data Types & commands in Redis](https://github.com/WonderTools/RedisCache/blob/master/Module2.md)**
     * String
     * List
     * Hash
