@@ -1,0 +1,76 @@
+### Redis Commands
+
+All of Redis commands can be find in their documentation. However for the ease of use, you could just filter out by data structure like strings, lists.
+
+We will be going through some basic commands so we get an understanding of different types of data structures supported by Redis.
+
+### Strings
+```
+SET name "John"                         
+GET name
+EXISTS name                            // Check existence of key
+DEL name                               // Delete key 
+EXPIRE name 5                          // Delete key when expired
+SET counter 100
+INCRBY counter 25                      // Increments by 25
+DECR counter                           // Decrements by 1  
+MSET a 10 b 20                         // Multiple SET
+MGET a b                               // Multiple GET
+```
+
+### Lists
+
+Redis lists are implemented using linked-lists rather than arrays. Therefore insertion happens in constant time while searching for key may take more time. Linked-lists implementation is used by Redis it allows to add elements quickly even to long list. However sorted-lists in Redis is recommended if you application would consistently search for elements.
+
+Ideal For :-
+ * Queues
+ * Stacks
+ * Top N recent News
+ 
+```
+LPUSH myList 10                        // Add from left to head
+RPUSH myList "str"                     // Add from right to tail
+LRANGE myList 0 -1                     // Range from 0 to -1
+LTRIM myList 0 1                       // To keep latest elements
+RPOP myList                            // Pop last element 
+```
+
+### Hashes
+
+Hash map consists of field-value pairs.
+```
+HMSET user id 100 name "Smith"        // Setup hash with key "user"
+HGET user id                          // Only 'id' field returned 
+HGETALL user
+```
+Sample Usage :-
+* Saving properties of a Business Object
+* 
+
+### Sets
+
+Sets are simply unordered collections of strings.Maintains unique set of items but unordered.
+Supports intersections, unions.
+Quickly check whether a member exist.
+
+Ideal For :-
+ * Storing relations (i.e. followers, friends)
+```
+SADD mySet 10 45 12                  // Add elements to set
+SMEMBERS mySet                       // Get all members of the set
+SISMEMBER mySet 10                   // Returns whether value exists
+```
+
+### Sorted sets
+Same as Set but ordered.
+The order is defined by score, Each memeber has a score assigned to.
+Sorted sets are kind of in-between set and hash data structures, where each element consists of floating point value called ‘score’. This is ordered in term of this score value.
+```
+ZADD children 1992 "Sam"             // Birth-year acts as score
+ZADD children 1997 "Tom"
+ZRANGE children 0 -1                 // Returns all in order
+ZREVRANGE children 0 -1 withScores   // Reverse order of ZRANGE
+ZRANGEBYSCORE children -inf 1995     // Scores until 1993
+ZREMRANGEBYSCORE children 1990 1995  // Remove from sorted set
+ZRANK children "Tom"                 // Score rank of 'Tom'
+```
