@@ -315,6 +315,56 @@ namespace redis_demo
 
 ## Implementing Pub/Sub
 
+## C#
+### Publisher
+```
+using ServiceStack.Redis;
+using System;
+
+namespace Redis_publisher
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using (var client = new RedisClient("localhost"))
+            {
+                client.PublishMessage("news", "Hello Mantra");
+                Console.ReadLine();
+            }
+        }
+    }
+}
+
+```
+
+### Subscriber
+```
+using ServiceStack.Redis;
+using System;
+
+namespace Redis_Pub_Sub
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using (var client1 = new RedisClient("localhost"))
+            {
+                using (var subscription1 = client1.CreateSubscription())
+                {
+                    subscription1.OnMessage = (c, m) => Console.WriteLine("Got message {0} from channel {1}", m, c);
+                    subscription1.SubscribeToChannels("news");
+                }
+            }
+        }
+
+    }
+}
+
+```
+
+## Node
 ### Publisher
 
 Mainly we are going to create three app servers. one is going to be a publisher and remaining two are subscribers.
