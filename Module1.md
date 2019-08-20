@@ -302,8 +302,7 @@ namespace redis_demo
     {
         static void Main(string[] args)
         {
-            var manager = new RedisManagerPool("localhost:6379");
-            using (var client = manager.GetClient())
+            using (var client = new RedisClient("localhost"))
             {
                 client.Set("name", "Anmol");
                 Console.WriteLine("name={0}", client.Get<string>("name"));
