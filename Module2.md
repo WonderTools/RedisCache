@@ -86,10 +86,15 @@ SDIFF mySet1 mySet2                   // return the vaue which is in mySet1 but 
 SDIFFSTORE mySet3 mySet1 mySet2       // store the difference of mySet1 and mySet2 in mySet3
 SUNION mySet1 mySet2                  // return unique values from mySet1 and mySet2
 SUNIONSTORE mySet4 mySet1 mySet2      // store the union of mySet1 and mySet2 in mySet4
+SSREM mySet4 6                        // remove 6 from set mySet4
+SPOP mySet4 1                         // remove one random value from mySet4
+SINTER mySet1 mySet2                  // return intersection of mySet1 and mySet2
+SINTERSTORE mySet5 mySet1 mySet2      // store the intersection of mySet1 and mySet2 in mySet5
+SMOVE mySet1 mySet2 1                 // move value 1 from mySet1 to mySet2
 ```
 
 ### Sorted sets
-Same as Set but ordered.
+Same as Set but ordered or their members can be sorted.
 The order is defined by score, Each memeber has a score assigned to.
 Sorted sets are kind of in-between set and hash data structures, where each element consists of floating point value called ‘score’. This is ordered in term of this score value.
 ```
