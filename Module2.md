@@ -70,16 +70,22 @@ Sample Usage :-
 
 ### Sets
 
-Sets are simply unordered collections of strings.Maintains unique set of items but unordered.
+Sets are simply unordered collections of unique strings.Maintains unique set of items but unordered.
 Supports intersections, unions.
 Quickly check whether a member exist.
 
 Ideal For :-
  * Storing relations (i.e. followers, friends)
 ```
-SADD mySet 10 45 12                  // Add elements to set
-SMEMBERS mySet                       // Get all members of the set
-SISMEMBER mySet 10                   // Returns whether value exists
+SADD mySet1 1 2 3                     // Add elements to set
+SMEMBERS mySet1                       // Get all members of the set
+SISMEMBER mySet1 10                   // Returns whether value exists
+SCARD mySet1                          // Number of element in the set
+SADD mySet2 3 4 5 6 7     
+SDIFF mySet1 mySet2                   // return the vaue which is in mySet1 but not in mySet2
+SDIFFSTORE mySet3 mySet1 mySet2       // store the difference of mySet1 and mySet2 in mySet3
+SUNION mySet1 mySet2                  // return unique values from mySet1 and mySet2
+SUNIONSTORE mySet4 mySet1 mySet2      // store the union of mySet1 and mySet2 in mySet4
 ```
 
 ### Sorted sets
