@@ -42,6 +42,9 @@ LLEN num                               // return length of the list
 LINDEX num 3                           // return 
 LSET num 0 5                           // Insert 5 at 0th index
 LRANGE num 0 -1                        // return all elements of list
+LPUSHX num 6                           // push if num key exist
+LINSERT num before 2 10                // insert value 10 before value 2
+LINSERT num after 5 4                  // insert value 4 after value 5
 ```
 
 ### Hashes
