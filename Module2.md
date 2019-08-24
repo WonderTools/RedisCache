@@ -19,7 +19,7 @@ MGET a b                               // Multiple GET
 ```
 
 ### Lists
-
+List of Strings sorted by their insertion order.
 Redis lists are implemented using linked-lists rather than arrays. Therefore insertion happens in constant time while searching for key may take more time. Linked-lists implementation is used by Redis it allows to add elements quickly even to long list. However sorted-lists in Redis is recommended if you application would consistently search for elements.
 
 Ideal For :-
