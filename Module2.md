@@ -39,14 +39,18 @@ RPOP myList                            // Pop last element
 
 Hash map consists of field-value pairs.
 ```
+HSET user name "Abhay"                // Set single field
 HMSET user id 100 name "Alam"         // Setup hash with key "user"
 HGET user id                          // Only 'id' field returned 
+HMGET user id name                    // get values of that field
 HGETALL user                          // return all field value
 HEXISTS user id                       // check if key id exists
 HDEL user name                        // delete key name
-HSETNX user                           // set if field doesnot exist
+HSETNX user surname mm                // set if field doesnot exist
 HKEYS user                            // show fields of user
 HVALS user                            // show only values of user
+HINCRBY user age 29                   // increment 
+HLEN user                             // Number of field value pair
 ```
 Sample Usage :-
 * Saving properties of a Business Object
