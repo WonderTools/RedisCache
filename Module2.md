@@ -27,6 +27,8 @@ Ideal For :-
  * Stacks
  * Top N recent News
  
+ LPUSH :  Inserting Element from HEAD
+ RPUSH :  Inserting Element from TAIL
 ```
 LPUSH myList 10                        // Add from left to head
 RPUSH myList "str"                     // Add from right to tail
