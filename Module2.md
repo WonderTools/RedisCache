@@ -106,4 +106,5 @@ ZRANK myset1 a                       // Return  index of a
 ZREVRANK myset1 d                    // Return index of d after sorting in desc order of rank
 ZSCORE myset1 b                      // Return score of b
 ZREVRANGE myset1 0 -1 withScores     // Reverse order of ZRANGE
+ZRANGEBYSCORE myset1 1 2             // Return members between that score
 ```
