@@ -96,13 +96,15 @@ SMOVE mySet1 mySet2 1                 // move value 1 from mySet1 to mySet2
 ### Sorted sets
 Same as Set but ordered or their members can be sorted.
 The order is defined by score, Each memeber has a score assigned to.
-Sorted sets are kind of in-between set and hash data structures, where each element consists of floating point value called ‘score’. This is ordered in term of this score value.
+Sorted sets are kind of in-between set and hash data structures, where each element consists of floating point value called ‘score’. This is ordered in term of this score value.You can give same score to multiple value.
 ```
-ZADD children 1992 "Sam"             // Birth-year acts as score
-ZADD children 1997 "Tom"
-ZRANGE children 0 -1                 // Returns all in order
-ZREVRANGE children 0 -1 withScores   // Reverse order of ZRANGE
-ZRANGEBYSCORE children -inf 1995     // Scores until 1993
-ZREMRANGEBYSCORE children 1990 1995  // Remove from sorted set
-ZRANK children "Tom"                 // Score rank of 'Tom'
+ZADD myset1 1 a 2 b 3 c 4 d          // Create a set if doesnot exist, 1 is score and a is value
+ZRANGE myset1 0 -1                   // Returns all in order
+ZCARD myset1                         // Reurn length of set
+ZCOUNT myset1 1 3                    // Count number of values between 1 & 3
+ZREM myset1 b                        // Remove member b from set
+ZRANK myset1 a                       // Return  index of a
+ZREVRANK myset1 d                    // Return index of d after sorting in desc order of rank
+ZSCORE myset1 b                      // Return score of b
+ZREVRANGE myset1 0 -1 withScores     // Reverse order of ZRANGE
 ```
