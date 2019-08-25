@@ -65,8 +65,7 @@ HINCRBY user age 29                   // increment
 HLEN user                             // Number of field value pair
 ```
 Sample Usage :-
-* Saving properties of a Business Object
-* 
+* Saving properties of a Business Object 
 
 ### Sets
 
