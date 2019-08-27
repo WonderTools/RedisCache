@@ -5,6 +5,7 @@ All of Redis commands can be find in their documentation. However for the ease o
 We will be going through some basic commands so we get an understanding of different types of data structures supported by Redis.
 
 ### Strings
+String types are the basic data types in Redis. Strings in Redis can store integers, images, files, strings and serialized objects, since Redis strings are byte arrays that are binary safe and have a maximum size of 512MB.
 ```
 SET name "John"                         
 GET name
