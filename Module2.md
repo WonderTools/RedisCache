@@ -40,7 +40,7 @@ LPOP num                               // pop value from the top
 RPUSH num 5                            // push value from last
 RPOP num                               // pop the value from the bottom
 LLEN num                               // return length of the list
-LINDEX num 3                           // return 
+LINDEX num 3                           // return value at 3rd position
 LSET num 0 5                           // Insert 5 at 0th index
 LRANGE num 0 -1                        // return all elements of list
 LPUSHX num 6                           // push if num key exist
