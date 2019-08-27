@@ -49,7 +49,7 @@ LINSERT num after 5 4                  // insert value 4 after value 5
 ```
 
 ### Hashes
-
+Redis Hash Datatype are similar in C# world as Dictionary e.g Dictionary<string, string>. Just like in C# redis stores map of attributes using key value pair. One thing to note is in Redis a Hash both the field name and the value are strings. Therefore, a Hash Datatype is a mapping of a string to a string.
 Hash map consists of field-value pairs.
 ```
 HSET user name "Abhay"                // Set single field
