@@ -14,11 +14,8 @@
 
     
   * **[Module2: Data Types & commands in Redis](https://github.com/WonderTools/RedisCache/blob/master/Module2.md)**
-    * String
-    * List
-    * Hash
-    * Set
-    * Sorted Set
+    * Redis DataTypes (String, List, Hash, Set, Sorted Set)
+    * Implementing DataType in C# with ServiceStack.Redis
     
   * **Module3: Creating a Real App With Redis**
     * Designing a Redis Database for an application
