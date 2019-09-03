@@ -17,7 +17,7 @@
     * Redis DataTypes (String, List, Hash, Set, Sorted Set)
     * Implementing DataType in C# with ServiceStack.Redis
     
-  * **Module3: Implementing Redis on Azure**
+  * **[Module3: Implementing Redis on Azure](https://github.com/WonderTools/RedisCache/blob/master/Module3.md)**
   
     
 
