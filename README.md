@@ -17,10 +17,7 @@
     * Redis DataTypes (String, List, Hash, Set, Sorted Set)
     * Implementing DataType in C# with ServiceStack.Redis
     
-  * **Module3: Creating a Real App With Redis**
-    * Designing a Real App with Redis
-    
-  * **Module4: Implementing Redis on Azure**
+  * **Module3: Implementing Redis on Azure**
   
     
 
